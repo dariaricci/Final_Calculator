@@ -1,0 +1,50 @@
+﻿<Window x:Class="Final_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final_Calculator"
+        xmlns:vm="clr-namespace:Final_Calculator.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400" WindowStartupLocation="CenterScreen">
+    <Window.Resources/>
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Path=Result}" HorizontalAlignment="Stretch" TextAlignment="Right"  Background="#FFA7CFE2" FontFamily="Arial" FontSize="36" Margin="3" Padding="0,35,0,0" Foreground="#FF474747"/>
+        <Grid Grid.Row="1" >
+            <UniformGrid Rows="6" Columns="4">
+                <Button Content="%" Background="#FFD4D1D1" Command="{Binding Path=NumberCommand}" CommandParameter="%"/>
+                <Button Content="CE" Background="#FFD4D1D1" Command="{Binding Path=OtherCommand}" CommandParameter="CE"/>
+                <Button Content="C" Background="#FFD4D1D1" Command="{Binding Path=OtherCommand}" CommandParameter="C" />
+                <Button Content="←" Background="#FFD4D1D1" Command="{Binding Path=OtherCommand}" CommandParameter="←"/>
+                <Button Content="1/x" Background="#FFD4D1D1" Command="{Binding Path=OperationCommand}" CommandParameter="1/x"/>
+                <Button Content="x²" Background="#FFD4D1D1" Command="{Binding Path=OperationCommand}" CommandParameter="x²"/>
+                <Button Content="√x" Background="#FFD4D1D1" Command="{Binding Path=OperationCommand}" CommandParameter="√x"/>
+                <Button Content="÷" Background="#FFD4D1D1" Command="{Binding Path=OperationCommand}" CommandParameter="÷"/>
+                <Button Content="7" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="7"/>
+                <Button Content="8" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="8"/>
+                <Button Content="9" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="9"/>
+                <Button Content="x" Background="#FFD4D1D1" Command="{Binding Path=OperationCommand}" CommandParameter="x"/>
+                <Button Content="4" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="4"/>
+                <Button Content="5" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="5"/>
+                <Button Content="6" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="6"/>
+                <Button Content="-" Background="#FFD4D1D1" Command="{Binding Path=OperationCommand}" CommandParameter="-"/>
+                <Button Content="1" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="1"/>
+                <Button Content="2" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="2"/>
+                <Button Content="3" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="3"/>
+                <Button Content="+" Background="#FFD4D1D1" Command="{Binding Path=OperationCommand}" CommandParameter="+"/>
+                <Button Content="+/-" Background="#FFE5F1EC" Command="{Binding Path=OtherCommand}" CommandParameter="+/-"/>
+                <Button Content="0" Background="#FFE5F1EC" Command="{Binding Path=NumberCommand}" CommandParameter="0"/>
+                <Button Content="," Background="#FFE5F1EC"  Command="{Binding Path=NumberCommand}" CommandParameter="."/>
+                <Button Content="=" Background="#FFD4D1D1" FontWeight="Bold" Command="{Binding Path=EqualCommand}"/>
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</Window>
